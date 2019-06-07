@@ -1,6 +1,6 @@
 ---
 title:  "Unable to get metrics for resource cpu"
-date: 2019-05-29 19:11:00 +0900
+date: 2019-05-29T19:11:00+09:00
 categories: [devops, kubernetes]
 ---
 
