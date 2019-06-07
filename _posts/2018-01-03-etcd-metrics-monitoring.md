@@ -8,7 +8,7 @@ tags: [etcd]
 # etcd 모니터링 하기 
 
 ## Metrics endpoint
-각각의 etcd 서버는 클라이언트 포트의 `/metrics` 경로를 이용해서 메트릭을 조회해 볼 수 있습니다.
+각각의 etcd 서버는 클라이언트 포트의 `/metrics` 경로를 이용해서 메트릭을 출력해 줍니다.
 (클라이언트 기본 포트는 2379 입니다.)
 ```bash
 $ curl http://127.0.0.1:2379/metrics
@@ -44,9 +44,8 @@ etcd_mvcc_db_total_size_in_use_in_bytes 4.77184e+06
 바로 `--listen-metrics-urls` 플래그 입니다.
 이 플래그를 이용해서, 별도의 엔드포인트를 지정할 수 있습니다.
 
-`--listen-metrics-urls=http://0.0.0.0:2381` 플래그를 etcd 실행 할때, 
-플래그로 추가하면 `2381` 포트로 `/metrics`과  `/health` 를 조회해 볼 수 있습니다.
-또 다른 방법으로는, 환경 변수나 설정 파일에 `ETCD_LISTEN_METRICS_URLS` 값을 설정해 줄 수 있습니다.
+`--listen-metrics-urls=http://0.0.0.0:2381` 플래그를 etcd 실행 할때 추가하면 `2381` 포트로 `/metrics`과  `/health` 를 조회해 볼 수 있습니다.
+또 다른 방법으로는 환경 변수나 설정 파일에 `ETCD_LISTEN_METRICS_URLS` 값을 설정하는 것입니다.
 
 ## Health endpoint
 `/health` 엔드포인트를 이용하면 etcd 서버의 상태를 알 수 있습니다.
@@ -67,4 +66,4 @@ scrape_configs:
 
 
 # 참고 문서
-- https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/monitoring.md
+- <https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/monitoring.md>

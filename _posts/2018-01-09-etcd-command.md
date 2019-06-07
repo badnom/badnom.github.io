@@ -7,8 +7,8 @@ tags: [etcd]
 
 # etcd 명령어
 ## 인증서 기반
-TLS 인증서 기반으로 etcd를 설치한 경우, etcdctl을 사용하라면 인증서 정보를 플래그로 넘겨줘야합니다. 
-그리고 3 버전의 API를 사용하려면 `ETCDCTL_API=3`이라가 선언해줘야 합니다.
+TLS 인증서 기반으로 etcd를 설치한 경우, etcdctl을 사용하려면 인증서 정보를 플래그로 넘겨줘야합니다. 
+그리고 3 버전의 API를 사용하려면 `ETCDCTL_API=3`를 선언해줘야 합니다.
 ```bash
 ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 \
     --cacert=/etc/kubernetes/pki/etcd/ca.crt \
@@ -24,8 +24,8 @@ alias etcd3ctl="ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 --cac
 ```
 
 ## 명령어 예제
-- 전체 조회
-3 버전 부터는 'ls' 명령어가 존재하지 않습니다. 전체 목록 같은 것을 조회하라면 `--prefix` 플래그를 사용하면 됩니다.
+### 전체 조회
+3 버전 부터는 `ls` 명령어가 존재하지 않습니다. 전체 목록 같은 것을 조회하라면 `--prefix` 플래그를 사용하면 됩니다.
 아래와 같이 실행하면, 전체 목록을 조회해 볼 수 있습니다.\
 ```bash
 $ etcd3ctl get / --prefix --keys-only
@@ -41,10 +41,9 @@ $ etcd3ctl get / --prefix --keys-only
 /registry/deployments/openebs/openebs-snapshot-operator
 /registry/deployments/weave/weave-scope-app
 ...
-
 ```
 
-- 멤버 조회
+### 멤버 조회
 ```bash
 $ etcd3ctl member list
 67fab7a197a31464, started, etcd-001, https://10.x.x.x:2380, https://10.x.x.x:2379
@@ -53,7 +52,7 @@ f3aacf2611e12d71, started, etcd-003, https://10.z.z.z:2380, https://10.z.z.z:237
 
 ```
 
-- 엔드포인트 상탱
+### 엔드포인트  상태
 ```bash
 $ etcd3ctl endpoint health
 https://[127.0.0.1]:2379 is healthy: successfully committed proposal: took = 1.13549ms
