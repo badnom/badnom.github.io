@@ -2,6 +2,7 @@
 title:  "프로메테우스 시계열 데이터 삭제하기"
 date: 2019-03-01T13:43:00+09:00
 categories: [devops, prometheus]
+tags: [prometheus]
 ---
 
 프로메테우스([Prometheus](https://prometheus.io/))에서 시계열(Time series) 데이터를 삭제하는 방법에 대해서 알아보겠습니다.

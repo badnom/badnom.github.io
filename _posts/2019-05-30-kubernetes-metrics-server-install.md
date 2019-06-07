@@ -2,6 +2,7 @@
 title:  "쿠버네티스에 메트릭 서버(metrics-server) 설치하기"
 date: 2019-05-30T20:34:00+09:00
 categories: [devops, kubernetes]
+tags: [kubernetes, metrics-server]
 ---
 
 쿠버네티스 v1.11부터 heapster가 deprecated 되었습니다 (자세한 내용은 [문서](https://github.com/kubernetes-retired/heapster/blob/master/docs/deprecation.md)를 참고 바랍니다.)

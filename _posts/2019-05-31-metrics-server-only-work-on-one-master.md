@@ -2,6 +2,7 @@
 title:  "쿠버네티스 매트릭 서버 인증 실패"
 date: 2019-05-31T20:51:00+09:00
 categories: [devops, kubernetes]
+tags: [kubernetes, metrics-server]
 ---
 
 쿠버네티스 v1.11.x에서 metrics-server를 설치하였으나, 한개의 마스터 서버에서만 정상적으로 작동하는 문제가 발생하였습니다. (3개의 마스터 서버로 HA 구성 상태)
@@ -37,3 +38,20 @@ apiServerCertSANs:
   - ma.xx.xx.xx
 
 ```
+
+그리고 ```kubeadm```을 실행해서 front-proxy 인증서를 생성하였습니다.
+
+```bash
+kubeadm alpha phase certs front-proxy-ca --config kube-config.yaml
+kubeadm alpha phase certs front-proxy-client --config kube-config.yaml
+
+```
+위의 명령을 실행하면 해당 파일들이 생성됩니다.
+- front-proxy-ca.crt
+- front-proxy-ca.key
+- front-proxy-client.crt
+- front-proxy-client.key
+
+생성한 파일들을, 나머지 마스터 서버에 복사하고, kube-api-server를 재시작합니다.
+
+모든 마스터 서버의 작업이 끝났으면, metrics-server를 재시작합니다.
