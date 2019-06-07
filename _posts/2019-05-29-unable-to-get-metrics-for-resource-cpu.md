@@ -1,5 +1,6 @@
 ---
 title:  "Unable to get metrics for resource cpu"
+classes: wide
 date: 2019-05-29T19:11:00+09:00
 categories: [devops, kubernetes]
 tags: [kubernetes, hpa]

@@ -1,5 +1,6 @@
 ---
 title:  "Ingress nginx 파일 업로드 크기 제한 늘리기 "
+classes: wide
 date: 2018-06-15T20:13:00+09:00
 categories: [devops, kubernetes]
 tags: [kubernetes, ingress-nginx]

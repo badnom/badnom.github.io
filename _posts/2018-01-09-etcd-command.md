@@ -1,5 +1,6 @@
 ---
 title:  "etcd 명령어"
+classes: wide
 date: 2018-01-09T20:25:00+09:00
 categories: [devops, etcd]
 tags: [etcd]

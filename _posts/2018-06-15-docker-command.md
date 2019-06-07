@@ -1,5 +1,6 @@
 ---
 title:  "docker 명령어"
+classes: wide
 date: 2018-06-15T20:13:00+09:00
 categories: [devops, docker]
 tags: [docker, container]

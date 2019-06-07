@@ -1,5 +1,6 @@
 ---
 title:  "etcd metrics monitoring"
+classes: wide
 date: 2018-01-03T20:13:00+09:00
 categories: [devops, etcd]
 tags: [etcd]

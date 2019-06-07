@@ -1,5 +1,6 @@
 ---
 title:  "kubeadm : unable to select an IP from default routes"
+classes: wide
 date: 2019-01-15T06:23:00+09:00
 categories: [devops, kubernetes]
 tags: [kubernetes, kubeadm]
