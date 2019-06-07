@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "쿠버네티스 매트릭 서버 인증 실패"
 date: 2019-05-31 20:51:00 +0900
 categories: [devops, kubernetes]

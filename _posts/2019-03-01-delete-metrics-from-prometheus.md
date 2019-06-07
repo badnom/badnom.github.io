@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "프로메테우스 시계열 데이터 삭제하기"
 date: 2019-03-01 13:43:00 +0900
 categories: [devops, prometheus]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "쿠버네티스에 메트릭 서버(metrics-server) 설치하기"
 date: 2019-05-30 20:34:00 +0900
 categories: [devops, kubernetes]
