@@ -4,7 +4,6 @@ classes: wide
 date: 2019-05-31T20:51:00+09:00
 categories: [devops, kubernetes]
 tags: [kubernetes, metrics-server]
-mathjax: true
 ---
 
 쿠버네티스 v1.11.x에서 metrics-server를 설치하였으나, 한개의 마스터 서버에서만 정상적으로 작동하는 문제가 발생하였습니다. (3개의 마스터 서버로 HA 구성 상태)
@@ -21,8 +20,6 @@ kube-apiserver와 metrics-server 간에 인증서로 상호 연동을 합니다.
 문제는 해당 쿠버네티스 클러스터를 설치하는 과정에서, 이 인증서를 마스터 서버마다 따로 생성을 해버려서, 한군데만 정상적으로 작동한다는 것이였습니다.
 (kubeadm을 이용해서 설치하였는데, 해당 인증서를 복사하지 않고 설차하여서, 자동으로 생성된 경우입니다.)
 그래서, 인증서를 다시 생성한 후, 각 마스터 서버에 복사하고, kube-api-server를 재시작 하였고, metrics-server를 재시작 해서 문제를 해결하였습니다.
-
-$$\sigma (x)=\frac { 1 }{ 1+{ e }^{ -x } } \\ \sigma '\left( x \right) =\sigma (x)(1-\sigma (x))$$
 
 쿠버네티스 버전이 1.11이기 때문에 kubeadm.k8s.io/v1alpha1 형식으로 파일을 만들어야 했습니다. 
 로드 밸런서 도메인 이름과, IP 주소, 각 마스터 서버의 IP 주소를 apiServerCertSANs 에 추가하여 kube-config.yaml 파일을 생성하였습니다.
